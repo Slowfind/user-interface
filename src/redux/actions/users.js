@@ -1,4 +1,3 @@
-import { apiUrl } from '../../api/index'
 export const setLoaded = (payload) => ({
     type: 'USERS:SET_LOADED',
     payload,
@@ -6,7 +5,7 @@ export const setLoaded = (payload) => ({
 
 export const fetchUsers = async (dispatch) => {
     dispatch(setLoaded(false))
-    const response = await fetch(`${apiUrl}/users`)
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
     const json = await response.json()
     setTimeout(() => {
         dispatch(setLoaded(true))

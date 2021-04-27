@@ -31,45 +31,46 @@ function ProfileItem() {
                             </Link>
                         </div>
                         <div className="col-lg-12 mt-5 mb-5">
-                            <ul>
+                            <ul className="user__profile">
                                 <li>
-                                    <b>name:</b> {profile && profile.name}
+                                    <span>name:</span> {profile && profile.name}
                                 </li>
                                 <li>
-                                    <b>username:</b>{' '}
+                                    <span>username:</span>{' '}
                                     {profile && profile.username}
                                 </li>
                                 <li>
-                                    <b>email:</b> {profile && profile.email}
+                                    <span>email:</span>{' '}
+                                    {profile && profile.email}
                                 </li>
                                 <li>
                                     <h3>address:</h3>
                                     <ul>
                                         <li>
-                                            <b>street:</b>{' '}
+                                            <span>street:</span>{' '}
                                             {profile && profile.address.street}
                                         </li>
                                         <li>
-                                            <b>suite:</b>{' '}
+                                            <span>suite:</span>{' '}
                                             {profile && profile.address.suite}
                                         </li>
                                         <li>
-                                            <b>city:</b>{' '}
+                                            <span>city:</span>{' '}
                                             {profile && profile.address.city}
                                         </li>
                                         <li>
-                                            <b>zipcode:</b>{' '}
+                                            <span>zipcode:</span>{' '}
                                             {profile && profile.address.zipcode}
                                         </li>
                                         <h4>geo:</h4>
                                         <ul>
                                             <li>
-                                                <b>lat:</b>{' '}
+                                                <span>lat:</span>{' '}
                                                 {profile &&
                                                     profile.address.geo.lat}
                                             </li>
                                             <li>
-                                                <b>lng:</b>{' '}
+                                                <span>lng:</span>{' '}
                                                 {profile &&
                                                     profile.address.geo.lng}
                                             </li>
@@ -77,25 +78,27 @@ function ProfileItem() {
                                     </ul>
                                 </li>
                                 <li>
-                                    <b>phone:</b> {profile && profile.phone}
+                                    <span>phone:</span>{' '}
+                                    {profile && profile.phone}
                                 </li>
                                 <li>
-                                    <b>website:</b> {profile && profile.website}
+                                    <span>website:</span>{' '}
+                                    {profile && profile.website}
                                 </li>
                                 <li>
                                     <h3>Company:</h3>
                                     <ul>
                                         <li>
-                                            <b>name:</b>{' '}
+                                            <span>name:</span>{' '}
                                             {profile && profile.company.name}
                                         </li>
                                         <li>
-                                            <b>catchPhrase:</b>{' '}
+                                            <span>catchPhrase:</span>{' '}
                                             {profile &&
                                                 profile.company.catchPhrase}
                                         </li>
                                         <li>
-                                            <b>bs:</b>{' '}
+                                            <span>bs:</span>{' '}
                                             {profile && profile.company.bs}
                                         </li>
                                     </ul>

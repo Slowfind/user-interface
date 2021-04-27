@@ -18,7 +18,6 @@ const users = (state = initialState, action) => {
             }
         case 'USERS:ADD_USER': {
             state.items.push(action.payload)
-            console.log(state.items, 'state')
             return {
                 ...state,
             }

@@ -16,9 +16,7 @@ function App() {
             <div className="row">
                 <Switch>
                     <Route exact path="/" component={() => <UserList />} />
-                    <Route exact path="/user/:id">
-                        <ProfileList />
-                    </Route>
+                    <Route exact path="/user/:id" component={ProfileList} />
                     <Route exact path="/user/:id/edit" component={EditForm} />
                     <Route path="*" component={NotFound} />
                 </Switch>

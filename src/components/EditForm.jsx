@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
-import { Loading } from './index'
+import { Loading, Alert } from './index'
 import { addUser, editUser } from '../redux/actions/users'
 
 function EditForm({ match }) {
@@ -11,6 +11,7 @@ function EditForm({ match }) {
     const { items } = useSelector((state) => state.users)
     const isLoaded = useSelector(({ users }) => users.isLoaded)
     const id = +match.params.id
+    const [alert, setAlert] = React.useState(false)
 
     const user = items.find((item) => id === item.id)
     const {
@@ -49,7 +50,8 @@ function EditForm({ match }) {
             items.length + 1 > id
                 ? dispatch(editUser(data))
                 : dispatch(addUser(data))
-            await sleep(1000)
+            await sleep(500)
+            data && setAlert(true)
         },
         [dispatch, id, items.length]
     )
@@ -57,6 +59,7 @@ function EditForm({ match }) {
         <>
             {isLoaded ? (
                 <div className="col-lg-8">
+                    {!alert || <Alert />}
                     <Link to="/" className="btn btn-primary">
                         Назад
                     </Link>
