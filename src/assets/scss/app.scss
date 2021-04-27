@@ -1,0 +1,98 @@
+.user {
+    img {
+        display: block;
+        max-width: 160px;
+        margin: auto;
+    }
+    &__name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #333;
+        text-decoration: none;
+    }
+    &-add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        line-height: 1;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+        text-decoration: none !important;
+        span {
+            background-color: #6200ee;
+            border-radius: 50%;
+            width: 86px;
+            height: 86px;
+            box-shadow: 0px 3px 5px -1px #00000033, 0px 6px 10px 0px #00000024,
+                0px 1px 18px 0px #0000001f;
+            display: inline-block;
+            position: relative;
+            transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 15ms linear 30ms,
+                transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
+            &:hover {
+                box-shadow: 0px 5px 5px -3px #00000033,
+                    0px 8px 10px 1px #00000024, 0px 3px 14px 2px #0000001f;
+            }
+            &:before,
+            &:after {
+                content: '';
+                width: 30px;
+                height: 4px;
+                background-color: #fff;
+                display: inline-block;
+                transform: translateX(-50%) translateY(-50%);
+                top: 50%;
+                left: 50%;
+                position: absolute;
+            }
+            &:after {
+                transform: translateX(-50%) translateY(-50%) rotate(90deg);
+            }
+        }
+    }
+}
+ul {
+    li {
+        margin-bottom: 10px;
+    }
+}
+.posts {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+    &__item {
+        margin-bottom: 30px;
+    }
+    &__title {
+        margin-bottom: 10px;
+    }
+}
+.loader {
+    background: none repeat scroll 0 0 #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    &__inner {
+        background-image: url('http://denis-creative.com/wp-content/uploads/2017/10/loader.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #fff;
+        height: 160px;
+        width: 160px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+}

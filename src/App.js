@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+
+import { UserList, EditForm, ProfileList, NotFound } from './components/index'
+import { fetchUsers } from './redux/actions/users'
+import './assets/scss/app.scss'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch()
+    React.useEffect(() => {
+        return dispatch(fetchUsers)
+    }, [dispatch])
+    return (
+        <div className="container pt-5">
+            <div className="row">
+                <Switch>
+                    <Route exact path="/" component={() => <UserList />} />
+                    <Route exact path="/user/:id">
+                        <ProfileList />
+                    </Route>
+                    <Route exact path="/user/:id/edit" component={EditForm} />
+                    <Route path="*" component={NotFound} />
+                </Switch>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
